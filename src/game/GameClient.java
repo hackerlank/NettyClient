@@ -38,13 +38,14 @@ public class GameClient {
 	}
 
 	public static void main(String[] args) {
-		int port = 8081;
-
+		
 		try {
-			new GameClient().connect(port, "127.0.0.1");
+			new GameClient().connect(8081, "127.0.0.1");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
+	public static native void cls();
 }
