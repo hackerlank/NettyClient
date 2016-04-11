@@ -11,14 +11,12 @@ public class UIMain extends UIAdapter {
 		this.cmdService = cmdService;
 	}
 	public UIMain() {
-		// TODO Auto-generated constructor stub
 		System.out.println("this is myGame,welcome!");
 	}
 	
 	public void start(){
 		while(true){
 			Cmd cmd = cmdService.getCmd();
-			
 		}
 	}
 
