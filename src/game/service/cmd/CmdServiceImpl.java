@@ -3,7 +3,6 @@ package game.service.cmd;
 import game.cache.OriginCmdCache;
 import game.entity.Cmd;
 import game.entity.Input;
-import game.ui.CmdException;
 
 public class CmdServiceImpl implements CmdService {
 

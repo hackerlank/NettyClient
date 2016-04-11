@@ -1,5 +1,6 @@
 package game.net;
 
+import game.util.Spring;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
@@ -15,6 +16,8 @@ public class ClientHandler extends ChannelHandlerAdapter{
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		// TODO Auto-generated method stub
 		super.channelRead(ctx, msg);
+		
+		System.out.println("client ----- receive message");
 	}
 
 	@Override

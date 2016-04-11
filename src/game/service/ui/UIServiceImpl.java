@@ -1,5 +1,14 @@
 package game.service.ui;
 
-public class UIServiceImpl implements UIService{
+import game.ui.base.UI;
 
+public class UIServiceImpl implements UIService {
+	@Override
+	public void start(UI ui) {
+		ui.initData();
+		ui.show();
+		ui.start();
+	}
+	
+	
 }

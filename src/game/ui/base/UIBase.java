@@ -1,6 +1,9 @@
-package game.ui;
+package game.ui.base;
+
+import java.util.Map;
 
 import game.entity.Cmd;
+import game.service.cmd.CmdException;
 import game.service.cmd.CmdService;
 
 /**
@@ -9,7 +12,7 @@ import game.service.cmd.CmdService;
  * @author wcy 2016年4月11日
  *
  */
-public class UIAdapter implements BaseUI {
+public class UIBase implements UI {
 
 	protected CmdService cmdService;
 
@@ -19,7 +22,11 @@ public class UIAdapter implements BaseUI {
 
 	@Override
 	public void initData() {
-		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void show() {
 
 	}
 
@@ -29,6 +36,9 @@ public class UIAdapter implements BaseUI {
 			Cmd cmd = null;
 			try {
 				cmd = cmdService.getCmd();
+				String type = cmd.getType();
+				String action = cmd.getAction();
+				Map<String,String> paramMap = cmd.getParamMap();
 			} catch (CmdException e) {
 				e.printStackTrace();
 				continue;

@@ -4,12 +4,12 @@ import game.service.cmd.CmdService;
 import game.service.cmd.CmdServiceImpl;
 import game.service.ui.UIService;
 import game.service.ui.UIServiceImpl;
-import game.ui.UIMain;
+import game.ui.UILogin;
 
 public class Spring {
 	
 	/*===========================UI================================*/
-	public static UIMain uiMain = new UIMain();
+	public static UILogin uiLogin = new UILogin();
 	
 	/*=============================================================*/
 	
@@ -22,7 +22,7 @@ public class Spring {
 
 	private static void initClassRelation() {
 		/*===========================UI================================*/
-		uiMain.setCmdService(cmdService);		
+		uiLogin.setCmdService(cmdService);		
 		/*=============================================================*/
 		
 		/*========================Service==============================*/
