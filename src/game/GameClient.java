@@ -1,14 +1,12 @@
 package game;
 
-import game.ui.UIMain;
+import game.util.Spring;
 
 public class GameClient {
 	
 
 	public static void main(String[] args) {
-		UIMain ui = new UIMain();
-		
-		ui.start();
+		Spring.uiMain.start();
 		
 //		Framework framework = new Framework();
 //		try {
@@ -18,5 +16,7 @@ public class GameClient {
 //			e.printStackTrace();
 //		}
 	}
+	
+	
 	
 }

@@ -1,6 +1,6 @@
 package game.ui;
 
 @SuppressWarnings("serial")
-public class CommandException extends Exception{
+public class CmdException extends Exception{
 
 }

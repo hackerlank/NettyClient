@@ -1,23 +1,17 @@
 package game.ui;
 
-import game.entity.Cmd;
-import game.module.cmd.service.CmdService;
 
 public class UIMain extends UIAdapter {
 	
-	private CmdService cmdService;
-	
-	public void setCmdService(CmdService cmdService){
-		this.cmdService = cmdService;
-	}
 	public UIMain() {
 		System.out.println("this is myGame,welcome!");
 	}
 	
-	public void start(){
-		while(true){
-			Cmd cmd = cmdService.getCmd();
-		}
+	@Override
+	public void initData() {
+		// TODO Auto-generated method stub
+		super.initData();
+		System.out.println("this is myGame-UIMain,welcome!");
 	}
 
 	
