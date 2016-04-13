@@ -15,7 +15,7 @@ public class Cmd {
 	/**动作*/
 	private String action;
 	/**参数*/
-	private Map<String, String> paramMap = new HashMap<>();
+	private Map<String, Object> paramMap = new HashMap<>();
 
 	public String getType() {
 		return type;
@@ -33,11 +33,11 @@ public class Cmd {
 		this.action = action;
 	}
 
-	public void addParams(String key, String value) {
+	public void addParams(String key, Object value) {
 		paramMap.put(key, value);
 	}
 
-	public Map<String, String> getParamMap() {
+	public Map<String, Object> getParamMap() {
 		return paramMap;
 	}
 

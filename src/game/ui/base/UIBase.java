@@ -32,18 +32,7 @@ public class UIBase implements UI {
 
 	@Override
 	public void start() {
-		while (true) {
-			Cmd cmd = null;
-			try {
-				cmd = cmdService.getCmd();
-				String type = cmd.getType();
-				String action = cmd.getAction();
-				Map<String,String> paramMap = cmd.getParamMap();
-			} catch (CmdException e) {
-				e.printStackTrace();
-				continue;
-			}
-		}
+		
 	}
 
 }

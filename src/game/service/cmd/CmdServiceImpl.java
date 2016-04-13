@@ -1,23 +1,11 @@
 package game.service.cmd;
 
-import game.cache.OriginCmdCache;
 import game.entity.Cmd;
-import game.entity.Input;
 
 public class CmdServiceImpl implements CmdService {
 
 	@Override
-	public Cmd getCmd() throws CmdException {
-
-		String originContent = Input.input().nextLine();
-
-		OriginCmdCache.addOriginCmd(originContent);
-		Cmd cmd = this.convertCmd(originContent);
-
-		return cmd;
-	}
-
-	private Cmd convertCmd(String originContent) throws CmdException {
+	public Cmd convertCmd(String originContent) throws CmdException {
 
 		Cmd cmd = null;
 		try {
@@ -40,7 +28,7 @@ public class CmdServiceImpl implements CmdService {
 		} catch (Exception e) {
 			throw new CmdException();
 		}
-		
+
 		return cmd;
 	}
 
