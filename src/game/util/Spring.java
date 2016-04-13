@@ -1,6 +1,7 @@
 package game.util;
 
 import game.entity.Input;
+import game.handler.InputHandler;
 import game.service.cmd.CmdService;
 import game.service.cmd.CmdServiceImpl;
 import game.service.ui.UIService;
@@ -8,6 +9,10 @@ import game.service.ui.UIServiceImpl;
 import game.ui.UILogin;
 
 public class Spring {
+	/*===========================Entity================================*/
+	public static InputHandler inputHandler = new InputHandler();
+	
+	/*=============================================================*/
 	
 	/*===========================UI================================*/
 	public static Input input = new Input();
@@ -25,7 +30,12 @@ public class Spring {
 	private static void initClassRelation() {
 		/*===========================UI================================*/
 		uiLogin.setCmdService(cmdService);		
-		input.setCmdService(cmdService);
+		
+		/*=============================================================*/
+		
+		/*===========================Entity================================*/
+		inputHandler.setCmdService(cmdService);
+		
 		/*=============================================================*/
 		
 		/*========================Service==============================*/

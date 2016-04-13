@@ -1,6 +1,7 @@
 package game.entity;
 
 import game.cache.OriginCmdCache;
+import game.handler.InputHandler;
 import game.service.cmd.CmdException;
 import game.service.cmd.CmdService;
 
@@ -18,10 +19,10 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class Input extends JFrame {
 
-	private CmdService cmdService;
+	private InputHandler inputHandler = null;
 
-	public void setCmdService(CmdService cmdService) {
-		this.cmdService = cmdService;
+	public void setInputHandler(InputHandler inputHandler) {
+		this.inputHandler = inputHandler;
 	}
 
 	public void start() {
@@ -51,26 +52,20 @@ public class Input extends JFrame {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 
 					String content = text.getText().trim();
-					if (content == null || text.equals("")) {
+					if (content == null || content.equals("")) {
 						return;
 					}
 					text.setText("");
 					OriginCmdCache.addOriginCmdAtFirst(content);
-					try {
-						Cmd cmd = cmdService.convertCmd(content);
-						String type = cmd.getType();
-						String action = cmd.getAction();
-						Map<String,Object> paramMap = cmd.getParamMap();
-					} catch (CmdException e1) {
-						e1.printStackTrace();
-					}
+					inputHandler.getCmd(content);
 					System.out.println(content);
 					cmdIndex = -1;
 
 				}
+
 				if (e.getKeyCode() == KeyEvent.VK_UP) {
 					List<String> list = OriginCmdCache.getOriginCmdList();
-					if(list.size() == 0){
+					if (list.size() == 0) {
 						return;
 					}
 					if (cmdIndex + 1 >= list.size()) {
@@ -85,7 +80,7 @@ public class Input extends JFrame {
 
 				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 					List<String> list = OriginCmdCache.getOriginCmdList();
-					if(list.size() == 0){
+					if (list.size() == 0) {
 						return;
 					}
 					if (cmdIndex <= 0) {
